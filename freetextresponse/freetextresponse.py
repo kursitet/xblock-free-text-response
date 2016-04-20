@@ -55,83 +55,60 @@ class FreeTextResponse(StudioEditableXBlockMixin, XBlock):
         help=_(
             'This is the title for this question type'
         ),
-        default=_('Free-text Response'),
+        default=u"Свободный ответ",
         scope=Scope.settings,
     )
     fullcredit_keyphrases = List(
-        display_name=_('Full-Credit Key Phrases'),
-        help=_(
-            'This is a list of words or phrases, one of '
-            'which must be present in order for the student\'s answer '
-            'to receive full credit'
-        ),
+        display_name=u"Фразы для 100% правильного ответа",
+        help=u"Это список слов или фраз, одна из которых должна быть "
+             u"указана студентом в ответе для получения 100% за это задание",
         default=[],
         scope=Scope.settings,
     )
     halfcredit_keyphrases = List(
-        display_name=_('Half-Credit Key Phrases'),
-        help=_(
-            'This is a list of words or phrases, one of '
-            'which must be present in order for the student\'s answer '
-            'to receive half credit'
-        ),
+        display_name=u"Фразы для 50% правильного ответа",
+        help=u"Это список слов или фраз, одна из которых должна быть "
+             u"указана студентом в ответе для получения 50% за это задание",
         default=[],
         scope=Scope.settings,
     )
     max_attempts = Integer(
-        display_name=_('Maximum Number of Attempts'),
-        help=_(
-            'This is the maximum number of times a '
-            'student is allowed to attempt the problem'
-        ),
+        display_name=u"Максимальное количество попыток",
+        help=u"Максимальное количество раз, которое студент может "
+             u"попытаться ответить",
         default=0,
         values={'min': 1},
         scope=Scope.settings,
     )
     max_word_count = Integer(
-        display_name=_('Maximum Word Count'),
-        help=_(
-            'This is the maximum number of words allowed for this '
-            'question'
-        ),
+        display_name=u"Максимальное количество слов",
+        help=u"Максимальное количество слов, возможное для этого вопроса",
         default=10000,
         values={'min': 1},
         scope=Scope.settings,
     )
     min_word_count = Integer(
-        display_name=_('Minimum Word Count'),
-        help=_(
-            'This is the minimum number of words required '
-            'for this question'
-        ),
+        display_name=u"Минимальное количество слов",
+        help=u"Минимальное количество слов требуемое для этого вопроса",
         default=1,
         values={'min': 1},
         scope=Scope.settings,
     )
     prompt = String(
-        display_name=_('Prompt'),
-        help=_(
-            'This is the prompt students will see when '
-            'asked to enter their response'
-        ),
-        default=_('Please enter your response within this text area'),
+        display_name=u"Подсказка",
+        help=u"Этот текст студенты будут видеть в окне для ввода ответа",
+        default=u"Пожалуйста, впишите Ваш ответ в это поле",
         scope=Scope.settings,
     )
     submitted_message = String(
-        display_name=_('Submission Received Message'),
-        help=_(
-            'This is the message students will see upon '
-            'submitting their response'
-        ),
-        default=_('Your submission has been received'),
+        display_name=u"Сообщение после отправки ответа",
+        help=u"Это сообщение студенты увидят отправив свой ответ",
+        default=u"Ваш ответ получен",
         scope=Scope.settings,
     )
     weight = Integer(
-        display_name=_('Weight'),
-        help=_(
-            'This assigns an integer value representing '
-            'the weight of this problem'
-        ),
+        display_name=u"Вес задания",
+        help=u"Целое значение, указывающее количество баллов за задание",
         default=1,
         values={'min': 1},
         scope=Scope.settings,
@@ -306,16 +283,9 @@ class FreeTextResponse(StudioEditableXBlockMixin, XBlock):
                 (ignore_attempts or self.count_attempts > 0) and
                 (not self._word_count_valid())
         ):
-            result = ungettext(
-                "Invalid Word Count. Your response must be "
-                "between {min} and {max} word.",
-                "Invalid Word Count. Your response must be "
-                "between {min} and {max} words.",
-                self.max_word_count,
-            ).format(
-                min=self.min_word_count,
-                max=self.max_word_count,
-            )
+            result = u"Неверное количество слов. Ваш ответ должен содержать "
+            u"не менее {min} и не более {max} слов." \
+                .format(min=self.min_word_count, max=self.max_word_count)
         return result
 
     def _get_indicator_class(self):
@@ -435,14 +405,12 @@ class FreeTextResponse(StudioEditableXBlockMixin, XBlock):
         """
         result = ''
         if self.max_attempts > 0:
-            result = ungettext(
-                'You have used {count_attempts} of {max_attempts} submission',
-                'You have used {count_attempts} of {max_attempts} submissions',
-                self.max_attempts,
-            ).format(
-                count_attempts=self.count_attempts,
-                max_attempts=self.max_attempts,
-            )
+            result = u"Вы использовали {count_attempts} "
+            u"из {max_attempts} попыток" \
+                .format(
+                    count_attempts=self.count_attempts,
+                    max_attempts=self.max_attempts,
+                )
         return result
 
     def _get_submit_class(self):
