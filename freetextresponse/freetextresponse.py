@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 This is the core logic for the Free-text Response XBlock
 """
