@@ -43,20 +43,14 @@ class FreeTextResponse(StudioEditableXBlockMixin, XBlock):
         return scenarios
 
     display_correctness = Boolean(
-        display_name=_('Display Correctness?'),
-        help=_(
-            'This is a flag that indicates if the indicator '
-            'icon should be displayed after a student enters '
-            'their response'
-        ),
+        display_name=u"Отображать правильность? (true = да, false = нет)",
+        help=u"Показывает пиктограмму, указывающую на правильность ответа. Выводится после ответа студента.",
         default=True,
         scope=Scope.settings,
     )
     display_name = String(
-        display_name=_('Display Name'),
-        help=_(
-            'This is the title for this question type'
-        ),
+        display_name=u"Отображаемое имя",
+        help=u"Это название отображается в горизонтальной навигационной панели в верхней части страницы.",
         default=u"Свободный ответ",
         scope=Scope.settings,
     )

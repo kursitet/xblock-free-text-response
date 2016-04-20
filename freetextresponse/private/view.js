@@ -14,9 +14,9 @@ function FreeTextResponseView(runtime, element) {
     var userInputClass = 'user-input';
 
     buttonSubmit.on('click', function () {
-        buttonSubmit.text('Checking...');
+        buttonSubmit.text('Сохранение...');
         runtime.notify('submit', {
-            message: 'Submitting...',
+            message: 'Сохраняем...',
             state: 'start'
         });
         $.ajax(url, {
@@ -34,7 +34,7 @@ function FreeTextResponseView(runtime, element) {
                 problemProgress.text('(' + response.problem_progress + ')');
                 wordCountError.text(response.word_count_message);
                 submissionReceivedMessage.text(response.submitted_message);
-                buttonSubmit.text('Submit');
+                buttonSubmit.text('Принять');
 
                 runtime.notify('submit', {
                     state: 'end'
