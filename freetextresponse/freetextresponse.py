@@ -92,8 +92,8 @@ class FreeTextResponse(StudioEditableXBlockMixin, XBlock):
     )
     prompt = String(
         display_name=u"Подсказка",
-        help=u"Этот текст студенты будут видеть в окне для ввода ответа",
-        default=u"Пожалуйста, впишите Ваш ответ в это поле",
+        help=u"Этот текст студенты будут видеть, когда они отвечают на вопрос",
+        default=u"Укажите здесь подсказку или вопрос",
         scope=Scope.settings,
     )
     submitted_message = String(
@@ -279,9 +279,7 @@ class FreeTextResponse(StudioEditableXBlockMixin, XBlock):
                 (ignore_attempts or self.count_attempts > 0) and
                 (not self._word_count_valid())
         ):
-            result = u"Неверное количество слов. Ваш ответ должен содержать "
-            u"не менее {min} и не более {max} слов." \
-                .format(min=self.min_word_count, max=self.max_word_count)
+            result = u"Неверное количество слов. Ваш ответ должен содержать не менее {min} и не более {max} слов.".format(min=self.min_word_count, max=self.max_word_count)
         return result
 
     def _get_indicator_class(self):
