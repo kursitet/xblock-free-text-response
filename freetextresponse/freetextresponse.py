@@ -399,8 +399,7 @@ class FreeTextResponse(StudioEditableXBlockMixin, XBlock):
         """
         result = ''
         if self.max_attempts > 0:
-            result = u"Вы использовали {count_attempts} "
-            u"из {max_attempts} попыток" \
+            result = u"Вы использовали {count_attempts} из {max_attempts} попыток" \
                 .format(
                     count_attempts=self.count_attempts,
                     max_attempts=self.max_attempts,
