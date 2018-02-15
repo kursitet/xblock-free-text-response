@@ -1,6 +1,7 @@
 """
 This is the core logic for the Free-text Response XBlock
 """
+import os
 from enum import Enum
 from django.db import IntegrityError
 from django.template.context import Context
@@ -271,7 +272,11 @@ class FreeTextResponse(EnforceDueDates, StudioEditableXBlockMixin, XBlock):
                 'word_count_message': self._get_word_count_message(),
             }
         )
-        template = get_template('freetextresponse_view.html')
+        # Mihara: Much more radical way to ensure the template gets found.
+        template = get_template(
+            'freetextresponse_view.html',
+            dirs=[os.path.join(os.path.dirname(os.path.abspath(__file__)),"templates")]
+        )
         fragment = self.build_fragment(
             template,
             context,
