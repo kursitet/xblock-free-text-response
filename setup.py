@@ -59,8 +59,8 @@ setup(
             'public/*',
             'private/*',
             'templates/*',
-            'translations/*',
-            'locale/*',
+            'translations/*', 'translations/*/*',
+            'locale/*', 'locale/*/*',
         ],
     },
     classifiers=[
