@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-15 16:14+0300\n"
+"PO-Revision-Date: 2018-02-15 16:25+0300\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: ../../../freetextresponse.py:80
+msgid "Display Correctness?"
+msgstr "Показывать индикатор корректности?"
+
+#: ../../../freetextresponse.py:82
+msgid ""
+"This is a flag that indicates if the indicator icon should be displayed "
+"after a student enters their response"
+msgstr "Показывать ли галочку-индикатор после приема ответа."
+
+#: ../../../freetextresponse.py:90
+msgid "Display Name"
+msgstr "Отображаемое имя"
+
+#: ../../../freetextresponse.py:92
+msgid "This is the title for this question type"
+msgstr ""
+"Это название отображается в горизонтальной навигационной панели в верхней "
+"части страницы."
+
+#: ../../../freetextresponse.py:98
+msgid "Full-Credit Key Phrases"
+msgstr "Ключевые слова для 100% оценки"
+
+#: ../../../freetextresponse.py:100
+msgid ""
+"This is a list of words or phrases, one of which must be present in order "
+"for the student's answer to receive full credit"
+msgstr ""
+"Список слов или фраз, как минимум одна из которых должна присутствовать "
+"чтобы слушатель получил максимальную оценку."
+
+#: ../../../freetextresponse.py:108
+msgid "Half-Credit Key Phrases"
+msgstr "Ключевые слова для 50% оценки"
+
+#: ../../../freetextresponse.py:110
+msgid ""
+"This is a list of words or phrases, one of which must be present in order "
+"for the student's answer to receive half credit"
+msgstr ""
+"Список слов или фраз, как минимум одна из которых должна присутствовать "
+"чтобы слушатель получил 50% оценку."
+
+#: ../../../freetextresponse.py:118
+msgid "Maximum Number of Attempts"
+msgstr "Максимальное число попыток"
+
+#: ../../../freetextresponse.py:120
+msgid ""
+"This is the maximum number of times a student is allowed to attempt the "
+"problem"
+msgstr "Максимальное число попыток которые слушатель сможет использовать."
+
+#: ../../../freetextresponse.py:128
+msgid "Maximum Word Count"
+msgstr "Максимальное число слов"
+
+#: ../../../freetextresponse.py:130
+msgid "This is the maximum number of words allowed for this question"
+msgstr ""
+"Максимальное количество слов которые слушатель должен вписать для приема "
+"ответа."
+
+#: ../../../freetextresponse.py:138
+msgid "Minimum Word Count"
+msgstr "Минимальное число слов"
+
+#: ../../../freetextresponse.py:140
+msgid "This is the minimum number of words required for this question"
+msgstr ""
+"Минимальное количество слов которые слушатель должен вписать для приема "
+"ответа."
+
+#: ../../../freetextresponse.py:148
+msgid "Prompt"
+msgstr "Пояснения"
+
+#: ../../../freetextresponse.py:150
+msgid "This is the prompt students will see when asked to enter their response"
+msgstr "Слушатели увидят этот текст над окном ввода ответа"
+
+#: ../../../freetextresponse.py:158
+msgid "Submission Received Message"
+msgstr "Сообщение о приеме ответа"
+
+#: ../../../freetextresponse.py:160
+msgid "This is the message students will see upon submitting their response"
+msgstr "Слушатели увидят это сообщение когда отправят ответ набело."
+
+#: ../../../freetextresponse.py:167
+msgid "Weight"
+msgstr "Вес задания"
+
+#: ../../../freetextresponse.py:169
+msgid "This assigns an integer value representing the weight of this problem"
+msgstr "Целое число, указывающее количество баллов за задание"
+
+#: ../../../freetextresponse.py:177
+msgid "Draft Received Message"
+msgstr "Сообщение о приеме черновика"
+
+#: ../../../freetextresponse.py:179
+msgid "This is the message students will see upon submitting a draft response"
+msgstr "Слушатели увидят это сообщение когда отправят черновик ответа."
+
+#: ../../../freetextresponse.py:355
+#, python-brace-format
+msgid "Your response must be between {min} and {max} word."
+msgid_plural "Your response must be between {min} and {max} words."
+msgstr[0] "Ваш ответ должен содержать не менее {min} и не более {max} слов."
+msgstr[1] "Ваш ответ должен содержать не менее {min} и не более {max} слов."
+msgstr[2] "Ваш ответ должен содержать не менее {min} и не более {max} слов."
+
+#: ../../../freetextresponse.py:377
+#, python-brace-format
+msgid "Invalid Word Count. {word_count_message}"
+msgstr "Неправильный объем ответа. {word_count_message}"
+
+#: ../../../freetextresponse.py:430
+#, python-brace-format
+msgid "{weight} point possible"
+msgid_plural "{weight} points possible"
+msgstr[0] "{weight} возможный балл"
+msgstr[1] "{weight} возможных балла"
+msgstr[2] "{weight} возможных баллов"
+
+#: ../../../freetextresponse.py:443
+#, python-brace-format
+msgid "{score_string}/{weight} point"
+msgid_plural "{score_string}/{weight} points"
+msgstr[0] "{score_string}/{weight} балл"
+msgstr[1] "{score_string}/{weight} балла"
+msgstr[2] "{score_string}/{weight} баллов"
+
+#: ../../../freetextresponse.py:507
+#, python-brace-format
+msgid "You have used {count_attempts} of {max_attempts} submission"
+msgid_plural "You have used {count_attempts} of {max_attempts} submissions"
+msgstr[0] "Вы использовали {count_attempts} из {max_attempts} попытки"
+msgstr[1] "Вы использовали {count_attempts} из {max_attempts} попытки"
+msgstr[2] "Вы использовали {count_attempts} из {max_attempts} попыток"
