@@ -270,6 +270,7 @@ class FreeTextResponse(EnforceDueDates, StudioEditableXBlockMixin, XBlock):
                 'used_attempts_feedback': self._get_used_attempts_feedback(),
                 'visibility_class': self._get_indicator_visibility_class(),
                 'word_count_message': self._get_word_count_message(),
+                'i18n_service': self.runtime.service(self, "i18n"),
             }
         )
         # Mihara: Much more radical way to ensure the template gets found.
