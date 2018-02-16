@@ -1,6 +1,9 @@
 """
 This is the core logic for the Free-text Response XBlock
 """
+
+from __future__ import unicode_literals
+
 import os
 from enum import Enum
 from django.db import IntegrityError
