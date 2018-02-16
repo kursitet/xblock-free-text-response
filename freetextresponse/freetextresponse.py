@@ -6,9 +6,9 @@ from enum import Enum
 from django.db import IntegrityError
 from django.template.context import Context
 from django.template.loader import get_template
-from django.utils.translation import ungettext
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ugettext
+from django.utils.translation import ungettext as ungettext_django
+from django.utils.translation import ugettext_lazy as ungettext_lazy_django
+from django.utils.translation import ugettext as ugettext_django
 from xblock.core import XBlock
 from xblock.fields import Boolean
 from xblock.fields import Float
@@ -21,6 +21,13 @@ from xblock.validation import ValidationMessage
 from xblockutils.studio_editable import StudioEditableXBlockMixin
 from .mixins import EnforceDueDates
 
+# Mihara: We assign to these so that there's always something in there.
+# We will reassign them once the i18n service is available.
+# This way we can touch this code as little as possible, which
+# will make it easier to track upstream.
+_ = ugettext_lazy_django
+ungettext = ungettext_django
+ugettext = ugettext_django
 
 @XBlock.needs("i18n")
 class FreeTextResponse(EnforceDueDates, StudioEditableXBlockMixin, XBlock):
@@ -28,6 +35,21 @@ class FreeTextResponse(EnforceDueDates, StudioEditableXBlockMixin, XBlock):
     """
     Enables instructors to create questions with free-text responses.
     """
+
+    def __init__(self, *args, **kwargs):
+        """
+        Install translation functions.
+        """
+        super(FreeTextResponse, self).__init__(*args, **kwargs)
+        # Now the trick: We install the translation functions supplied by the
+        # service as if they're module-level functions.
+        global _
+        global ungettext
+        global ugettext
+        _ = self.runtime.service("i18n").ugettext
+        ungettext = self.runtime.service("i18n").ungettext
+        ugettext = self.runtime.service("i18n").ugettext
+
     @staticmethod
     def workbench_scenarios():
         """
