@@ -46,9 +46,9 @@ class FreeTextResponse(EnforceDueDates, StudioEditableXBlockMixin, XBlock):
         global _
         global ungettext
         global ugettext
-        _ = self.runtime.service("i18n").ugettext
-        ungettext = self.runtime.service("i18n").ungettext
-        ugettext = self.runtime.service("i18n").ugettext
+        _ = self.runtime.service(self, "i18n").ugettext
+        ungettext = self.runtime.service(self, "i18n").ungettext
+        ugettext = self.runtime.service(self, "i18n").ugettext
 
     @staticmethod
     def workbench_scenarios():
