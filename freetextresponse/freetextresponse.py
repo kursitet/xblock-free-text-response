@@ -7,7 +7,7 @@ from django.db import IntegrityError
 from django.template.context import Context
 from django.template.loader import get_template
 from django.utils.translation import ungettext as ungettext_django
-from django.utils.translation import ugettext_lazy as ungettext_lazy_django
+from django.utils.translation import ugettext_lazy as ugettext_lazy_django
 from django.utils.translation import ugettext as ugettext_django
 from xblock.core import XBlock
 from xblock.fields import Boolean
